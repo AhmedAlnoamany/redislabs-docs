@@ -75,7 +75,7 @@ of the configuration and persistence files on each of the nodes.
     from the [rladmin]({{< relref "/rs/references/rladmin.md" >}}) command-line interface (CLI):
 
     ```sh
-    cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
+    cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> external_addr <external_IP> rack_id <rack_id> 
     ```
 
     {{% expand "Command syntax" %}}
@@ -89,6 +89,8 @@ in the new node.
 
 `<ephemeral_path>` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
+
+`<external_addr>` (optional) - External IP addresses of the node
 
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
 was enabled in the cluster,
@@ -108,7 +110,7 @@ Otherwise, the node gets the same rack ID as the original node.
 1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
 
     ```sh
-    cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
+    cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id> external_addr <external_IP>
     ```
 
     {{% expand "Command syntax" %}}
@@ -128,6 +130,8 @@ in the new node.
 
 `ephemeral_path` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
+
+`<external_addr>` (optional) - External IP addresses of the node
 
 `rack_id` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
 use this parameter to set the rack ID to be the same as the rack ID
