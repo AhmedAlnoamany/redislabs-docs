@@ -29,7 +29,7 @@ Keep the following in mind:
 
 - Upgrades from versions earlier than v6.0 are not supported
 
-- The new internode encryption feature requires port 3342 to be open on all machines in the cluster.
+- The new internode encryption feature requires port 3342 to be open on all machines in the cluster. Make sure all [required network ports]({{<relref "https://docs.redis.com/latest/rs/administering/designing-production/networking/port-configurations/">}}) are open in your firewall.
 
 - [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), Redis Enterprise Software replaced Nginx with envoy to improve internal security and communication.  As of v6.2.4, Nginx is no longer provided with Redis Enterprise Software.
 
