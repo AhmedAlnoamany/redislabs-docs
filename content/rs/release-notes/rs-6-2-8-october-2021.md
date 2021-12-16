@@ -30,6 +30,8 @@ This version features:
 
 - Refer to the [v6.2.4 release notes]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}) for important notes regarding the upgrade process.
 
+- Make sure all [required network ports]({{<relref "https://docs.redis.com/latest/rs/administering/designing-production/networking/port-configurations/">}}) are open in your firewall.
+
 - Upgrades from versions earlier than v6.0 are not supported
 
 ### Product lifecycle updates
