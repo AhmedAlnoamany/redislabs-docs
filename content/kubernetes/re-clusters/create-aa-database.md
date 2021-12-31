@@ -179,6 +179,8 @@ crdb-cli crdb create
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
 
 See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
+            
+After the database is created successfully, a new Ingress/Route will be automatically created for the DB traffic, with the pattern <db-name>-<ingress-suffix>. The Route creation (success or failure) is logged in the service-rigger logs.            
 
 ## Test your database
 
