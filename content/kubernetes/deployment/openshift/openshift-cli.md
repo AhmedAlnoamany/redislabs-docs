@@ -168,9 +168,9 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
     ```
 
 1. Create a patch file for the Kubernetes webhook using your own values for the namespace and webhook name.
-
+//The sed command is incomplete. Should be similar to the one in the k8s docs https://docs.redis.com/latest/kubernetes/deployment/quick-start/#enable-the-admission-controller:~:text=Create%20a%20patch%20file%20for%20the%20Kubernetes%20validating%20webhook.
     ```sh
-    sed '<your_namespace>' admission/webhook.yaml | oc create -f -
+    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
     cat > modified-webhook.yaml <<EOF
     webhooks:
       - name: <your.admission.webhook>
